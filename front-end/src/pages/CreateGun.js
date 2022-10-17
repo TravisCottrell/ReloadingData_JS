@@ -1,12 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
-import {
-    Routes,
-    Route,
-    useLocation,
-    Link,
-    useNavigate,
-} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const CreateGun = () => {
     const [gunName, setGunName] = useState("");
@@ -16,7 +10,7 @@ const CreateGun = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await fetch("/guns/createGun", {
+            await fetch("/api/guns/createGun", {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json",

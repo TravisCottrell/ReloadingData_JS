@@ -15,7 +15,7 @@ const Table = ({ bulletData }) => {
     const addResult = async () => {
         try {
             const response = await fetch(
-                `/gun/create_row/${bullet.bullet_id}`,
+                `/api/gun/create_row/${bullet.bullet_id}`,
                 {
                     method: "POST",
                     headers: {
@@ -91,15 +91,15 @@ const Table = ({ bulletData }) => {
                 <div className="container mb-4">
                     <div className="flex">
                         <div className="border border-zinc-400 pl-2 flex-initial w-3/12 ">
-                            <h2 className="pb-3">bullet: </h2>
+                            <h2 className="pb-3">Bullet: </h2>
                             <p>{bullet.name}</p>
                         </div>
                         <div className="border border-zinc-400 pl-2 flex-initial w-3/6 ">
-                            <h2 className="pb-3">powder: </h2>
+                            <h2 className="pb-3">Powder: </h2>
                             <p>{bullet.powder}</p>
                         </div>
                         <div className="border border-zinc-400 pl-2 flex-auto ">
-                            <h2 className="pb-3">primer: </h2>
+                            <h2 className="pb-3">Primer: </h2>
                             <p>{bullet.primer}</p>
                         </div>
                     </div>
@@ -109,11 +109,11 @@ const Table = ({ bulletData }) => {
                             <p>{bullet.name}</p>
                         </div>
                         <div className="border border-zinc-400 pl-2 flex-initial w-4/12 ">
-                            <h2 className="pb-3">land length: </h2>
+                            <h2 className="pb-3">Land Length: </h2>
                             <p>{bullet.powder}</p>
                         </div>
                         <div className="border border-zinc-400 pl-2 flex-auto ">
-                            <h2 className="pb-3">land offset: </h2>
+                            <h2 className="pb-3">Land Offset: </h2>
                             <p>{bullet.primer}</p>
                         </div>
                     </div>
@@ -133,7 +133,7 @@ const Table = ({ bulletData }) => {
                         <thead>
                             <tr>
                                 <th className="border border-zinc-400 text-center">
-                                    charge
+                                    Charge
                                 </th>
                                 <th className="border border-zinc-400 text-center">
                                     MOA
@@ -185,7 +185,7 @@ const Table = ({ bulletData }) => {
                                     );
                                 })}
                             <tr
-                                className="border border-zinc-400 hover:bg-gray-100"
+                                className="border border-zinc-400 hover:bg-[#2a2d3c] bg-[#34374a]"
                                 onClick={addResult}
                             >
                                 <td>+ New</td>

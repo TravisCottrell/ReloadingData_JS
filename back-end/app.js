@@ -10,8 +10,8 @@ const gunRouter = require("./routes/gun");
 app.use(cors());
 app.use(express.json());
 
-app.use("/guns", gunsRouter);
-app.use("/gun", gunRouter);
+app.use("/api/guns", gunsRouter);
+app.use("/api/gun", gunRouter);
 
 const port = process.env.PORT || 3005;
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { Routes, Route, useLocation, Link } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 
 const Guns = () => {
     const [guns, setGuns] = useState(null);
@@ -13,7 +13,7 @@ const Guns = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch("/guns");
+                const response = await fetch("/api/guns");
                 const data = await response.json();
                 setGuns(data.guns);
                 setIsLoading(false);

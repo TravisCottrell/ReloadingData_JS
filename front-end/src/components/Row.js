@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import { FaTrashAlt, FaEdit, FaSave } from "react-icons/fa";
 
 const Row = ({
@@ -10,7 +9,7 @@ const Row = ({
 }) => {
     const deleteResultDB = async (id) => {
         try {
-            await fetch(`/gun/delete_result/${id}`, {
+            await fetch(`/api/gun/delete_result/${id}`, {
                 method: "DELETE",
                 headers: {
                     "Content-type": "application/json",

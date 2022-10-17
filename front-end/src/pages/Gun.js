@@ -12,7 +12,7 @@ const Gun = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`/gun/${id}`);
+                const response = await fetch(`/api/gun/${id}`);
                 const data = await response.json();
 
                 setGunData(data.gun[0]);
@@ -28,7 +28,7 @@ const Gun = () => {
 
     const addBullet = async () => {
         try {
-            const response = await fetch(`/gun/${id}/create_bullet`, {
+            const response = await fetch(`/api/gun/${id}/create_bullet`, {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json",
@@ -39,7 +39,7 @@ const Gun = () => {
 
             const newBullet = data.bullet.rows[0];
 
-            //add a null result to match other result data
+            //add a null result to match other bullet data so it doesn't throw an error when trying to display the data
             newBullet.results = null;
 
             let tempGun = { ...gunData };
@@ -60,7 +60,7 @@ const Gun = () => {
 
     return (
         <>
-            <div className="container max-w-5xl h-screen:auto">
+            <div className="container max-w-5xl ">
                 <h1 className="font-medium leading-tight text-5xl text-white mt-0 mb-2 ">
                     {gunData.gun}
                 </h1>

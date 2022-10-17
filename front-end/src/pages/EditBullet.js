@@ -1,13 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import {
-    Routes,
-    Route,
-    useLocation,
-    Link,
-    useNavigate,
-} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const EditBullet = () => {
     const [bullet, setBullet] = useState("");
@@ -21,7 +15,7 @@ const EditBullet = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`/gun/edit_bullet/${id}`);
+                const response = await fetch(`/api/gun/edit_bullet/${id}`);
                 const data = await response.json();
 
                 setBullet(data.bullet.bullet);
@@ -38,7 +32,7 @@ const EditBullet = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await fetch(`/gun/edit_bullet/${id}`, {
+            await fetch(`/api/gun/edit_bullet/${id}`, {
                 method: "PATCH",
                 headers: {
                     "Content-type": "application/json",
@@ -54,7 +48,7 @@ const EditBullet = () => {
 
     const handleDelete = async () => {
         try {
-            await fetch(`/gun/delete_bullet/${id}`, {
+            await fetch(`/api/gun/delete_bullet/${id}`, {
                 method: "DELETE",
                 headers: {
                     "Content-type": "application/json",

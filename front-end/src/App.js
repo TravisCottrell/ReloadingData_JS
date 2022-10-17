@@ -6,7 +6,7 @@ import CreateGun from "./pages/CreateGun";
 import EditBullet from "./pages/EditBullet";
 function App() {
     return (
-        <div className="bg-myBackground m-0 p-0 flex flex-col ">
+        <div className="bg-myBackground m-0 p-0 flex flex-col min-h-screen">
             <Routes>
                 <Route path="/guns" element={<Guns />} />
                 <Route path="/guns/createGun" element={<CreateGun />} />

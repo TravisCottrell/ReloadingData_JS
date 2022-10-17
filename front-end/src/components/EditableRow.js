@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { FaTimesCircle, FaSave } from "react-icons/fa";
 
 const EditRow = ({ result, setEditRow, updateResult }) => {
@@ -11,7 +11,7 @@ const EditRow = ({ result, setEditRow, updateResult }) => {
     //sends the data to the API to update the database
     const updateRow = async (data) => {
         try {
-            await fetch("/gun/update_row/", {
+            await fetch("/api/gun/update_row/", {
                 method: "PATCH",
                 headers: {
                     "Content-type": "application/json",
@@ -37,7 +37,7 @@ const EditRow = ({ result, setEditRow, updateResult }) => {
             { velocity_id: result.velocity[1].velocity_id, velocity_num: vel2 },
             { velocity_id: result.velocity[2].velocity_id, velocity_num: vel3 }
         );
-        console.log("that new new", newResult);
+
         updateRow(newResult);
         updateResult(newResult);
         setEditRow(null);
@@ -48,7 +48,7 @@ const EditRow = ({ result, setEditRow, updateResult }) => {
             <tr className="hover:bg-[#383c52]">
                 <td className="border p-2">
                     <input
-                        className="w-full h-full border border-2 rounded-sm border-gray-200"
+                        className="w-full h-full border border-2 rounded-sm border-gray-200 text-black"
                         type="number"
                         value={charge}
                         onChange={(e) => setCharge(parseFloat(e.target.value))}
@@ -56,7 +56,7 @@ const EditRow = ({ result, setEditRow, updateResult }) => {
                 </td>
                 <td className="border p-2">
                     <input
-                        className="w-full h-full border border-2 rounded-sm border-gray-200"
+                        className="w-full h-full border border-2 rounded-sm border-gray-200 text-black"
                         type="number"
                         value={moa}
                         onChange={(e) => setMoa(parseFloat(e.target.value))}
@@ -65,7 +65,7 @@ const EditRow = ({ result, setEditRow, updateResult }) => {
 
                 <td className="border p-2">
                     <input
-                        className="w-full h-full border border-2 rounded-sm border-gray-200"
+                        className="w-full h-full border border-2 rounded-sm border-gray-200 text-black"
                         type="number"
                         value={vel1}
                         onChange={(e) => setVel1(parseInt(e.target.value))}
@@ -73,7 +73,7 @@ const EditRow = ({ result, setEditRow, updateResult }) => {
                 </td>
                 <td className="border p-2">
                     <input
-                        className="w-full h-full border border-2 rounded-sm border-gray-200"
+                        className="w-full h-full border border-2 rounded-sm border-gray-200 text-black"
                         type="number"
                         value={vel2}
                         onChange={(e) => setVel2(parseInt(e.target.value))}
@@ -81,7 +81,7 @@ const EditRow = ({ result, setEditRow, updateResult }) => {
                 </td>
                 <td className="border p-2">
                     <input
-                        className="w-full h-full border border-2 rounded-sm border-gray-200"
+                        className="w-full h-full border border-2 rounded-sm border-gray-200 text-black"
                         type="number"
                         value={vel3}
                         onChange={(e) => setVel3(parseInt(e.target.value))}
