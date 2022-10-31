@@ -8,7 +8,7 @@ function App() {
     return (
         <div className="bg-myBackground m-0 p-0 flex flex-col min-h-screen">
             <Routes>
-                <Route path="/guns" element={<Guns />} />
+                <Route path="/" element={<Guns />} />
                 <Route path="/guns/createGun" element={<CreateGun />} />
                 <Route path="/gun/:id" element={<Gun />} />
                 <Route path="/gun/edit_bullet/:id" element={<EditBullet />} />

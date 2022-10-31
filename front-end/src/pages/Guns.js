@@ -7,9 +7,6 @@ const Guns = () => {
     const [isLoading, setIsLoading] = useState(true);
     const location = useLocation();
 
-    console.log("hash:", location.hash);
-    console.log("pathname:", location.pathname);
-    console.log("search:", location.search);
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -30,14 +27,14 @@ const Guns = () => {
 
     return (
         <>
-            <div className="flex flex-col items-center justify-center pt-10 h-screen">
+            <div className="flex flex-col mt-20 mx-auto h-screen w-1/4">
                 <button
                     type="button"
-                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded"
+                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 w-full rounded"
                 >
                     <Link to={"/guns/createGun"}>add Gun</Link>
                 </button>
-                <div className=" w-48 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                <div className=" w-full text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
                     {guns.map((item) => {
                         return (
                             <Link

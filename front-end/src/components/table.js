@@ -161,17 +161,18 @@ const Table = ({ bulletData }) => {
                             {bullet.results !== null &&
                                 bullet.results.map((result, index) => {
                                     return (
-                                        <>
+                                        <tr
+                                            className="hover:bg-[#383c52]"
+                                            key={index}
+                                        >
                                             {editRow === result.test_id ? (
                                                 <EditRow
-                                                    key={result.test_id}
                                                     result={result}
                                                     setEditRow={setEditRow}
                                                     updateResult={updateResult}
                                                 />
                                             ) : (
                                                 <Row
-                                                    key={result.test_id}
                                                     result={result}
                                                     setEditRow={setEditRow}
                                                     deleteRow={deleteRow}
@@ -181,7 +182,7 @@ const Table = ({ bulletData }) => {
                                                     }
                                                 />
                                             )}
-                                        </>
+                                        </tr>
                                     );
                                 })}
                             <tr
