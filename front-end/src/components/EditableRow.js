@@ -45,69 +45,67 @@ const EditRow = ({ result, setEditRow, updateResult }) => {
 
     return (
         <>
-            <tr className="hover:bg-[#383c52]">
-                <td className="border p-2">
-                    <input
-                        className="w-full h-full border border-2 rounded-sm border-gray-200 text-black"
-                        type="number"
-                        value={charge}
-                        onChange={(e) => setCharge(parseFloat(e.target.value))}
-                    />
-                </td>
-                <td className="border p-2">
-                    <input
-                        className="w-full h-full border border-2 rounded-sm border-gray-200 text-black"
-                        type="number"
-                        value={moa}
-                        onChange={(e) => setMoa(parseFloat(e.target.value))}
-                    />
-                </td>
+            <td className="border p-2">
+                <input
+                    className="w-full h-full border border-2 rounded-sm border-gray-200 text-black"
+                    type="number"
+                    value={charge}
+                    onChange={(e) => setCharge(parseFloat(e.target.value))}
+                />
+            </td>
+            <td className="border p-2">
+                <input
+                    className="w-full h-full border border-2 rounded-sm border-gray-200 text-black"
+                    type="number"
+                    value={moa}
+                    onChange={(e) => setMoa(parseFloat(e.target.value))}
+                />
+            </td>
 
-                <td className="border p-2">
-                    <input
-                        className="w-full h-full border border-2 rounded-sm border-gray-200 text-black"
-                        type="number"
-                        value={vel1}
-                        onChange={(e) => setVel1(parseInt(e.target.value))}
-                    />
-                </td>
-                <td className="border p-2">
-                    <input
-                        className="w-full h-full border border-2 rounded-sm border-gray-200 text-black"
-                        type="number"
-                        value={vel2}
-                        onChange={(e) => setVel2(parseInt(e.target.value))}
-                    />
-                </td>
-                <td className="border p-2">
-                    <input
-                        className="w-full h-full border border-2 rounded-sm border-gray-200 text-black"
-                        type="number"
-                        value={vel3}
-                        onChange={(e) => setVel3(parseInt(e.target.value))}
-                    />
-                </td>
-                <td className="border p-2">{result.test_id}</td>
-                <td className="border p-2">{result.test_id}</td>
-                <td className="border">
-                    <div className="flex justify-center">
-                        <button
-                            type="button"
-                            className="mr-1 bg-green-600 hover:bg-green-700 text-lg text-white font-bold px-0.5 py-1 rounded"
-                            onClick={() => saveResult(result.test_id)}
-                        >
-                            <FaSave />
-                        </button>
-                        <button
-                            className="bg-red-500 hover:bg-red-700 text-lg text-white font-bold px-0.5 py-1 rounded"
-                            type="button"
-                            onClick={() => setEditRow(null)}
-                        >
-                            <FaTimesCircle />
-                        </button>
-                    </div>
-                </td>
-            </tr>
+            <td className="border p-2">
+                <input
+                    className="w-full h-full border border-2 rounded-sm border-gray-200 text-black"
+                    type="number"
+                    value={vel1}
+                    onChange={(e) => setVel1(parseInt(e.target.value))}
+                />
+            </td>
+            <td className="border p-2">
+                <input
+                    className="w-full h-full border border-2 rounded-sm border-gray-200 text-black"
+                    type="number"
+                    value={vel2}
+                    onChange={(e) => setVel2(parseInt(e.target.value))}
+                />
+            </td>
+            <td className="border p-2">
+                <input
+                    className="w-full h-full border border-2 rounded-sm border-gray-200 text-black"
+                    type="number"
+                    value={vel3}
+                    onChange={(e) => setVel3(parseInt(e.target.value))}
+                />
+            </td>
+            <td className="border p-2">{result.test_id}</td>
+            <td className="border p-2">{result.test_id}</td>
+            <td className="border">
+                <div className="flex justify-center">
+                    <button
+                        type="button"
+                        className="mr-1 bg-green-600 hover:bg-green-700 text-lg text-white font-bold px-0.5 py-1 rounded"
+                        onClick={() => saveResult(result.test_id)}
+                    >
+                        <FaSave />
+                    </button>
+                    <button
+                        className="bg-red-500 hover:bg-red-700 text-lg text-white font-bold px-0.5 py-1 rounded"
+                        type="button"
+                        onClick={() => setEditRow(null)}
+                    >
+                        <FaTimesCircle />
+                    </button>
+                </div>
+            </td>
         </>
     );
 };
