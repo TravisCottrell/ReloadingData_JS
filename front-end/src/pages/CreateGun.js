@@ -21,7 +21,7 @@ const CreateGun = () => {
             console.log(error);
         }
 
-        navigate("/guns");
+        navigate("/");
     };
 
     return (
