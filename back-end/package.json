@@ -7,8 +7,7 @@
         "node": "16.13.2"
     },
     "scripts": {
-        "start": "node app",
-        "build": "cd ../front-end && npm install && npm run build",
+        "start": "node app.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [],
